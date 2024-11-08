@@ -1,0 +1,75 @@
+// Outer Interface
+interface Sport {
+    // A method in the interface
+    void play();
+    
+    // Nested Interface
+    interface Equipment {
+        void provideEquipment();
+    }
+}
+
+// Class implementing the outer interface and nested interface
+class Cricket implements Sport, Sport.Equipment {
+    
+    // Implement the play method of the Sport interface
+    public void play() {
+        System.out.println("Playing cricket...");
+    }
+
+    // Implement the provideEquipment method of the nested Equipment interface
+    public void provideEquipment() {
+        System.out.println("Providing cricket bat and ball.");
+    }
+}
+
+class Football implements Sport, Sport.Equipment {
+    
+    // Implement the play method of the Sport interface
+    public void play() {
+        System.out.println("Playing football...");
+    }
+
+    // Implement the provideEquipment method of the nested Equipment interface
+    public void provideEquipment() {
+        System.out.println("Providing football and goal posts.");
+    }
+}
+
+// Class containing a nested interface
+class Coach {
+    
+    // Nested Interface inside class
+    interface Strategy {
+        void applyStrategy();
+    }
+    
+    // Implementing the Strategy interface within Coach class
+    class CricketCoach implements Strategy {
+        
+        @Override
+        public void applyStrategy() {
+            System.out.println("Applying cricket strategy: Focus on spin bowling.");
+        }
+    }
+}
+
+public class InheritanceNestedInterface {
+    public static void main(String[] args) {
+        // Creating objects of Cricket and Football classes
+        Cricket cricket = new Cricket();
+        Football football = new Football();
+        
+        // Calling methods from the interfaces
+        cricket.play(); // Cricket's play method
+        cricket.provideEquipment(); // Cricket's equipment method
+        
+        football.play(); // Football's play method
+        football.provideEquipment(); // Football's equipment method
+        
+        // Creating an instance of Coach and applying strategy
+        Coach coach = new Coach();
+        Coach.Strategy cricketStrategy = coach.new CricketCoach();
+        cricketStrategy.applyStrategy(); // Applying cricket strategy
+    }
+}

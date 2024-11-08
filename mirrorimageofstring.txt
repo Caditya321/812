@@ -1,0 +1,25 @@
+public class MirrorImage {
+
+    // Method to create the mirror image of a string
+    public static String createMirrorImage(String input) {
+        // Initialize an empty string to store the reversed string
+        String mirror = "";
+
+        // Loop through the input string in reverse order to build the mirror image
+        for (int i = input.length() - 1; i >= 0; i--) {
+            mirror += input.charAt(i);  // Append each character in reverse order
+        }
+
+        // Return the original string and the mirror image separated by a pipe symbol
+        return input + "|" + mirror;
+    }
+
+    public static void main(String[] args) {
+        // Example input string
+        String input = "PICT";
+        
+        // Call the method and print the result
+        String result = createMirrorImage(input);
+        System.out.println(result);  // Output: PICT|TCIP
+    }
+}

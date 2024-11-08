@@ -1,0 +1,34 @@
+public class LexicographicalPairs {
+    
+    // Method to count lexicographical pairs in a string
+    public static int countLexicographicalPairs(String str) {
+        int count = 0;
+        
+        // Loop through the string and check adjacent characters
+        for (int i = 0; i < str.length() - 1; i++) {
+            // Compare the current character with the next one
+            if (str.charAt(i) < str.charAt(i + 1)) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+
+    public static void main(String[] args) {
+        // Given input string
+        String str = "hello world";
+        
+        // Split the string into "hello" and "world"
+        String firstPart = str.substring(0, 5);  // "hello"
+        String secondPart = str.substring(6);    // "world"
+        
+        // Count lexicographical pairs in both parts
+        int firstCount = countLexicographicalPairs(firstPart);
+        int secondCount = countLexicographicalPairs(secondPart);
+        
+        // Concatenate both counts as a string and print the result
+        String result = "" + firstCount + secondCount;
+        System.out.println(result);  // Output: 21
+    }
+}
