@@ -1,0 +1,38 @@
+// Define a class for swapping numbers
+class Swapping {
+    
+    // Method to swap integers (Case I)
+    public void swapnum(int a, int b) {
+        System.out.println("Before swap: a = " + a + ", b = " + b);
+        // Swap logic
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println("After swap: a = " + a + ", b = " + b);
+    }
+    
+    // Overloaded method to swap doubles (Case II)
+    public void swapnum(double a, double b) {
+        System.out.println("Before swap: a = " + a + ", b = " + b);
+        // Swap logic
+        double temp = a;
+        a = b;
+        b = temp;
+        System.out.println("After swap: a = " + a + ", b = " + b);
+    }
+}
+
+public class SwapNumbers {
+    public static void main(String[] args) {
+        // Create an object of Swapping class
+        Swapping swapObj = new Swapping();
+        
+        // Case I: Swapping two integers
+        System.out.println("Case I: Integer Swap");
+        swapObj.swapnum(10, 20);  // Input: a=10, b=20
+        
+        // Case II: Swapping two doubles
+        System.out.println("\nCase II: Double Swap");
+        swapObj.swapnum(10.2, 20.2);  // Input: a=10.2, b=20.2
+    }
+}

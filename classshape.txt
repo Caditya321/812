@@ -1,0 +1,61 @@
+// Superclass Shape
+class Shape {
+    // Fields (for shape properties)
+    double length, width, height;
+
+    // Default constructor
+    public Shape() {
+        this.length = 0;
+        this.width = 0;
+        this.height = 0;
+        System.out.println("Shape default constructor called.");
+    }
+
+    // Parameterized constructor
+    public Shape(double length, double width, double height) {
+        this.length = length;
+        this.width = width;
+        this.height = height;
+        System.out.println("Shape parameterized constructor called.");
+    }
+
+    // Method to calculate volume (to be overridden in subclass)
+    public void calculate() {
+        System.out.println("Volume of shape cannot be calculated.");
+    }
+}
+
+// Subclass Test1 that inherits from Shape
+class Test1 extends Shape {
+    // Default constructor for Test1
+    public Test1() {
+        super(); // Call the Shape's default constructor
+        System.out.println("Test1 default constructor called.");
+    }
+
+    // Parameterized constructor for Test1
+    public Test1(double length, double width, double height) {
+        super(length, width, height); // Call the Shape's parameterized constructor
+        System.out.println("Test1 parameterized constructor called.");
+    }
+
+    // Overriding the calculate() method to compute the volume of a shape
+    @Override
+    public void calculate() {
+        // Assuming the shape is a rectangular prism to calculate the volume
+        double volume = length * width * height;
+        System.out.println("Volume of shape (Rectangular Prism) is: " + volume);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Test Case 1: Creating an object using the default constructor
+        Test1 shape1 = new Test1();
+        shape1.calculate();  // Call the overridden method to calculate volume
+
+        // Test Case 2: Creating an object using the parameterized constructor
+        Test1 shape2 = new Test1(5.0, 3.0, 2.0);
+        shape2.calculate();  // Call the overridden method to calculate volume
+    }
+}

@@ -1,0 +1,16 @@
+public class ArrayOutOfBoundsExample {
+    public static void main(String[] args) {
+        // Create an array with 5 elements
+        int[] numbers = {1, 2, 3, 4, 5};
+
+        try {
+            // Attempt to access an index that is out of bounds
+            int outOfBoundsElement = numbers[10];
+            System.out.println(outOfBoundsElement);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // Handle the exception
+            System.out.println("ArrayIndexOutOfBoundsException caught!");
+            System.out.println("Exception message: " + e.getMessage());
+        }
+    }
+}

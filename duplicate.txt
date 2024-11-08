@@ -1,0 +1,48 @@
+
+
+    public static void printDuplicates(int[] arr) {
+        System.out.print("Duplicate elements: ");
+        
+        boolean foundDuplicate = false; // Flag to check if any duplicates exist
+
+        for (int i = 0; i < arr.length; i++) {
+            // Check if this element has already been printed as a duplicate
+            boolean isDuplicate = false;
+            
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            
+            // If not already printed as duplicate, check for duplicates in the rest of the array
+            if (!isDuplicate) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        System.out.print(arr[i] + " ");
+                        foundDuplicate = true;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if (!foundDuplicate) {
+            System.out.print("No duplicates found");
+        }
+
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] x = {1, 2, 2, 3, 4, 5, 6, 7, 7, 8};
+        int[] y = {15, 15, 23, 34, 1, 2, 3, 4};
+
+        System.out.print("Array x duplicates: ");
+        printDuplicates(x); // Expected output: 2 7
+
+        System.out.print("Array y duplicates: ");
+        printDuplicates(y); // Expected output: 15
+    }
+

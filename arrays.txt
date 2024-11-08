@@ -1,0 +1,24 @@
+public class SmallestMissingElement {
+
+        int n = arr.length;
+        
+        // Check for the smallest missing element starting from 0
+        for (int i = 0; i < n; i++) {
+            // If the current element is not equal to its index, the index is the missing number
+            if (arr[i] != i) {
+                return i;
+            }
+        }
+        
+        // If all elements are in order, the missing element is the next integer after the last element
+        return n;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 5, 6};
+        int[] arr2 = {0, 1, 2, 3, 5, 6};
+
+        System.out.println("Smallest missing element in arr1: " + findSmallestMissing(arr1)); // Output: 0
+        System.out.println("Smallest missing element in arr2: " + findSmallestMissing(arr2)); // Output: 4
+    }
+

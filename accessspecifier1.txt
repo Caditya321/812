@@ -1,0 +1,25 @@
+// Package declaration
+package package1;
+
+public class MyClass {
+
+    // Public member (accessible everywhere)
+    public String publicField = "I am public";
+
+    // Protected member (accessible within the same package or subclasses)
+    protected String protectedField = "I am protected";
+
+    // Default member (accessible only within the same package)
+    String defaultField = "I am default";
+
+    // Private member (accessible only within this class)
+    private String privateField = "I am private";
+
+    // Public method to display all fields
+    public void displayFields() {
+        System.out.println(publicField);
+        System.out.println(protectedField);
+        System.out.println(defaultField);
+        System.out.println(privateField);
+    }
+}

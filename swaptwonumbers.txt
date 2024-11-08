@@ -1,0 +1,42 @@
+// Define a class that holds two numbers
+class Number {
+    // Fields to store the numbers
+    double num1, num2;
+
+    // Constructor to initialize the numbers
+    public Number(double num1, double num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+    
+    // Method to swap the two numbers
+    public void swap(Number n) {
+        // Swapping the values of num1 and num2
+        double temp = n.num1;
+        n.num1 = n.num2;
+        n.num2 = temp;
+    }
+
+    // Method to print the values of the numbers
+    public void printNumbers() {
+        System.out.println("num1: " + num1 + ", num2: " + num2);
+    }
+}
+
+public class SwapExample {
+    public static void main(String[] args) {
+        // Create an object of class Number with initial values
+        Number numbers = new Number(5.0, 10.0);
+        
+        // Print initial values
+        System.out.println("Before swap:");
+        numbers.printNumbers();
+        
+        // Call swap method to swap the values of num1 and num2
+        numbers.swap(numbers);
+        
+        // Print values after swapping
+        System.out.println("After swap:");
+        numbers.printNumbers();
+    }
+}

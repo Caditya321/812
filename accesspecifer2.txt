@@ -1,0 +1,29 @@
+// Package declaration
+package package2;
+
+// Importing the MyClass from package1
+import package1.MyClass;
+
+public class TestAccessSpecifiers {
+
+    public static void main(String[] args) {
+        // Creating an object of MyClass
+        MyClass obj = new MyClass();
+
+        // Accessing public member
+        System.out.println("Public Field: " + obj.publicField);
+
+        // Accessing protected member (only accessible if TestAccessSpecifiers is in the same package or a subclass)
+        // Uncomment the line below to see that this will not compile if the class is not in the same package or subclass
+        // System.out.println("Protected Field: " + obj.protectedField);  // Error!
+
+        // Accessing default member (this will not compile because TestAccessSpecifiers is in a different package)
+        // System.out.println("Default Field: " + obj.defaultField);  // Error!
+
+        // Accessing private member (this will not compile because private members are only accessible within the same class)
+        // System.out.println("Private Field: " + obj.privateField);  // Error!
+
+        // Calling method to display all fields
+        obj.displayFields();
+    }
+}

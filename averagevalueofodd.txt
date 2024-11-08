@@ -1,0 +1,35 @@
+public class AverageOddNumbers {
+
+    public static void main(String[] args) {
+        // Example array with some odd and even numbers
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        // Calling the method to calculate and print the average of odd numbers
+        calculateAverageOfOddNumbers(arr);
+    }
+
+    // Method to calculate and print the average of odd numbers
+    public static void calculateAverageOfOddNumbers(int[] arr) {
+        int sum = 0;   // To store the sum of odd numbers
+        int count = 0; // To count the number of odd numbers
+        
+        // Loop through the array
+        for (int num : arr) {
+            // Check if the number is odd
+            if (num % 2 != 0) {
+                sum += num;  // Add odd number to the sum
+                count++;     // Increment the count of odd numbers
+            }
+        }
+        
+        // Check if there are any odd numbers
+        if (count > 0) {
+            // Calculate and print the average of odd numbers
+            double average = (double) sum / count;
+            System.out.println("The average of odd numbers is: " + average);
+        } else {
+            // If no odd numbers are found, print a message
+            System.out.println("No odd numbers found in the array.");
+        }
+    }
+}
